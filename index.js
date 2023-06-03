@@ -7,17 +7,17 @@ const port = 3000;
 
 const logger = require('./util/logger.js');
 const gps = require('./routes/gps.js');
-const getTime = require('./routes/getTime.js');
+const get_settings = require('./routes/get_settings.js');
 
 
-app.use((req, res, next) => {
-    logger.log({ level: 'info', message: req.body });
-    next();
-});
+// app.use((req, res, next) => {
+//     logger.log({ level: 'info', message: req.body });
+//     next();
+// });
 
 // Routes
 app.use('/log', gps);
-app.use('/get_time', getTime)
+app.use('/settings', get_settings)
 
 // Start server
 app.listen(port, () => {

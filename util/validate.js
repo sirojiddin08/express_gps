@@ -1,8 +1,9 @@
 const Joi = require('joi');
 
 module.exports = Joi.object({
+    deviceId: Joi.string().required().min(3),
     keyword: Joi.string().default('0'),
-    dateTime: Joi.date().required(),
+    dateTime: Joi.date().timestamp().required(),
     lat: Joi.number().required().min(-90).max(90).not(0),
     long: Joi.number().required().min(-180).max(180).not(0),
     ignition: Joi.boolean().default(false),

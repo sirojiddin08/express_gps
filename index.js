@@ -8,6 +8,7 @@ const port = 3000;
 const logger = require('./util/logger.js');
 const gps = require('./routes/gps.js');
 const get_settings = require('./routes/get_settings.js');
+const get_coordinates = require('./routes/get_coordinates.js');
 
 
 // app.use((req, res, next) => {
@@ -18,6 +19,7 @@ const get_settings = require('./routes/get_settings.js');
 // Routes
 app.use('/log', gps);
 app.use('/settings', get_settings)
+app.use('/get_coordinates', get_coordinates)
 
 // Start server
 app.listen(port, () => {

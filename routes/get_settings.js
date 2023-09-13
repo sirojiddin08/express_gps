@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
                 send_data:
                 {
                     onmove: 1,
-                    onstop: 60
+                    onstop: 1
                 },
                 server_time: Date.now(),
                 cached_data: 100
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
         });
 
     } catch (error) {
-        logger.log({ level: 'error', message: error.message });
+        logger.log({ level: 'error', message: { text: error.message, input: req.body} });
         res.status(400).send({ msg: error.message, status: 0 });
     }
 });

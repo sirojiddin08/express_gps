@@ -1,7 +1,7 @@
 module.exports = {
-    host: '10.100.9.171',
+    host: '127.0.0.1',
     port: 5432,
     user: 'postgres',
     password: 'postgres',
-    database: 'oxrana_monitoring_regions',
+    database: 'gnd',
 }
